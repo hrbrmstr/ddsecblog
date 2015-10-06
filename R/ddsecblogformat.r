@@ -83,14 +83,6 @@ partition_yaml_front_matter <- function(input_lines) {
                  sprintf("Slug: %s", tolower(gsub("\\-+", "\\-", gsub("[^[:alnum:]]", "-", fm[["Title"]])))),
                  "Status: draft"))
 
-    message(front_matter)
-    message(fm_strs)
-
-    message(length(front_matter))
-    message(length(fm_strs))
-
-    message(class(front_matter))
-    message(class(fm_strs))
 
     input_body <- c()
 
