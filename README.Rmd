@@ -14,53 +14,33 @@ knitr::opts_chunk$set(
 )
 ```
 
-[![Build Status](https://travis-ci.org/hrbrmstr/ddsecblog.svg)](https://travis-ci.org/hrbrmstr/ddsecblog) 
-![Project Status: Concept - Minimal or no implementation has been done yet.](http://www.repostatus.org/badges/0.1.0/concept.svg)](http://www.repostatus.org/#concept)
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/ddsecblog)](http://cran.r-project.org/web/packages/ddsecblog) 
-![downloads](http://cranlogs.r-pkg.org/badges/grand-total/ddsecblog)
+ddsecblog is a knitr output format for creating posts for [Data Driven Security](http://dds.ec/blog)
 
-ddsecblog is ...
+After doing a `devtools::install_github("hrbrmstr/ddsecblog")` install, format posts like this in an Rmd file to generate an Rmd and figures you can move to the ddsec blog directory structure:
 
-The following functions are implemented:
+    ---
+    Title: RBerkeley Was Just Pining For the Fjords
+    Date: 2015-07-27
+    Tags: blog, r, rstats
+    Category: blog, r, rstats
+    Author: Bob Rudis (@hrbrmstr)
+    output: ddsecblog::post
+    ---
 
-The following data sets are included:
+    ```{r setup, include=FALSE}
+    knitr::opts_chunk$set(echo = TRUE)
+    ```
 
-### News
+    This is some text.
 
-- Version  released
+    ```{r}
+    print("this is some R code")
+    ```
 
-### Installation
+    This is *MOAR* text
 
-```{r eval=FALSE}
-devtools::install_github("hrbrmstr/ddsecblog")
-```
+    ```{r}
+    plot(mtcars$wt, mtcars$mpg)
+    ```
 
-```{r echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
-options(width=120)
-```
-
-### Usage
-
-```{r}
-library(ddsecblog)
-
-# current verison
-packageVersion("ddsecblog")
-
-```
-
-### Test Results
-
-```{r}
-library(ddsecblog)
-library(testthat)
-
-date()
-
-test_dir("tests/")
-```
-
-### Code of Conduct
-
-Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). 
-By participating in this project you agree to abide by its terms.
+    That was a _plot_.
